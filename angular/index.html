@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en" ng-app="myApp">
+<head>
+  <meta charset="UTF-8">
+  <title>Angular Demo</title>
+  <script src="lib/angular/angular.min.js"></script>
+  <script src="js/controllers.js"></script>
+  
+</head>
+<body>
+<div class="main" ng-controller = "MyController">
+
+  <div >
+    <h1>Movies</h1>
+    <label>search: </label>
+    <input ng-model="query" placeholder="Search for movies" autofocus>
+
+  </div>
+  <ul>
+    <li ng-repeat="item in movies | filter: query">
+        <h2>{{item.title}}</h2>
+        <h3>{{item.rating}}</h3>
+      </div>
+    </li>
+  </ul>
+</div>
+</body>
+</html>
