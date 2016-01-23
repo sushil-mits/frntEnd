@@ -14,13 +14,34 @@
     <h1>Movies</h1>
     <label>search: </label>
     <input ng-model="query" placeholder="Search for movies" autofocus>
-
   </div>
+    <label>Action</label>
+    <ul>
+      <li ng-repeat="item in movies | filter: query" ng-if='item.category=="Action"'>
+          <h2>{{item.title}}</h2>
+          <h3>{{item.rating}}</h3>        
+      </li>
+    </ul>
+
+  <label>Comedy</label>
   <ul>
-    <li ng-repeat="item in movies | filter: query">
+    <li ng-repeat="item in movies | filter: query" ng-if='item.category=="Comedy"'>
         <h2>{{item.title}}</h2>
         <h3>{{item.rating}}</h3>
-      </div>
+    </li>
+  </ul>
+  <label>Thriller</label>
+  <ul>
+    <li ng-repeat="item in movies | filter: query" ng-if='item.category=="Thriller"'>
+        <h2>{{item.title}}</h2>
+        <h3>{{item.rating}}</h3>
+    </li>
+  </ul>
+  <label>Drama</label>
+  <ul>
+    <li ng-repeat="item in movies | filter: query" ng-if='item.category=="Drama"'>
+        <h2>{{item.title}}</h2>
+        <h3>{{item.rating}}</h3>
     </li>
   </ul>
 </div>
